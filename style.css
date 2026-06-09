@@ -1565,6 +1565,17 @@ input, textarea, select { font-family: inherit; }
   .rating-bars { min-width: auto; width: 100%; }
 }
 
+@media (max-width: 580px) {
+  .product-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .btn-buy, .btn-cart {
+    width: 100%;
+    padding: 12px;
+  }
+}
+
 @media (max-width: 480px) {
 
   .products-grid { grid-template-columns: 1fr; }
@@ -1869,8 +1880,15 @@ input, textarea, select { font-family: inherit; }
   border-bottom: 1px solid var(--border);
   padding-bottom: 12px;
   width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+.owner-tabs::-webkit-scrollbar {
+  display: none;
 }
 .owner-tab {
+  flex-shrink: 0;
   background: transparent;
   color: var(--text-secondary);
   border: none;
